@@ -14,6 +14,8 @@ import com.example.openaijavatest.data.api.response.CreateImageByOpenAIResponse;
 import com.example.openaijavatest.data.api.response.StableDiffusionImg2ImgResponse;
 import com.example.openaijavatest.viewmodel.base.BaseViewModel;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonPrimitive;
 import com.jakewharton.rxbinding3.InitialValueObservable;
 import com.jakewharton.rxbinding3.widget.TextViewEditorActionEvent;
 
@@ -69,9 +71,30 @@ public class WordToImageViewModel extends BaseViewModel {
                                                     try {
                                                         if (response.isSuccessful() && response.body() != null && TextUtils.equals(response.body().getStatus(), "success")) {
                                                             StableDiffusionImg2ImgResponse stableDiffusionImg2ImgResponse = response.body();
-                                                            if (stableDiffusionImg2ImgResponse.getOutputList().size() > 0) {
-                                                                output.mResultImageSetImageSubject.onNext(stableDiffusionImg2ImgResponse.getOutputList().get(0).getAsString());
+
+                                                            String urlString = "";
+                                                            if (stableDiffusionImg2ImgResponse.getOutputList() instanceof JsonPrimitive) {
+                                                                urlString = ((JsonPrimitive) stableDiffusionImg2ImgResponse.getOutputList()).getAsString();
                                                             }
+
+                                                            if (stableDiffusionImg2ImgResponse.getOutputList() instanceof JsonArray) {
+                                                                if (((JsonArray) stableDiffusionImg2ImgResponse.getOutputList()).size() > 0) {
+                                                                    urlString = ((JsonArray) stableDiffusionImg2ImgResponse.getOutputList()).get(0).getAsString();
+                                                                }
+                                                            }
+
+                                                            if (TextUtils.isEmpty(urlString)) {
+                                                                urlString = stableDiffusionImg2ImgResponse.getOutputList().toString();
+                                                                Log.d(TAG, "onResponse Object: " + urlString);
+                                                            }
+
+                                                            Log.d(TAG, "onResponse original UrlString: " + urlString);
+                                                            if (urlString.length() > 10 && !urlString.startsWith("https://")) {
+                                                                urlString = urlString.substring(urlString.indexOf("https://"));
+                                                                int lastIndex = urlString.lastIndexOf(".png");
+                                                                urlString = urlString.substring(0, lastIndex + 4);
+                                                            }
+                                                            output.mResultImageSetImageSubject.onNext(urlString);
                                                         }
 
                                                         if (!response.isSuccessful()) {

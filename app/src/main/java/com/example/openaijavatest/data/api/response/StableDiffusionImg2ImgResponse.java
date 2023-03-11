@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class StableDiffusionImg2ImgResponse {
 
@@ -21,7 +22,7 @@ public class StableDiffusionImg2ImgResponse {
     private Number mID;
 
     @SerializedName("output")
-    private JsonArray mOutputList = new JsonArray();
+    private Object mOutputList = new Object();
 
     @SerializedName("meta")
     private Meta mMeta;
@@ -50,11 +51,11 @@ public class StableDiffusionImg2ImgResponse {
         mID = ID;
     }
 
-    public JsonArray getOutputList() {
+    public Object getOutputList() {
         return mOutputList;
     }
 
-    public void setOutputList(JsonArray outputList) {
+    public void setOutputList(Object outputList) {
         mOutputList = outputList;
     }
 

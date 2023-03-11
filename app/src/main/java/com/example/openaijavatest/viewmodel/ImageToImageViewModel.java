@@ -25,6 +25,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonPrimitive;
 import com.jakewharton.rxbinding3.InitialValueObservable;
 
 import java.io.ByteArrayOutputStream;
@@ -133,17 +135,35 @@ public class ImageToImageViewModel extends BaseViewModel {
                                     if (response.isSuccessful() && response.body() != null && TextUtils.equals(response.body().getStatus(), "success")) {
                                         Log.d(TAG, "onResponse gson: " + new Gson().toJson(response.body()));
                                         StableDiffusionImg2ImgResponse img2ImgResponse = response.body();
-                                        if (img2ImgResponse.getOutputList().size() > 0) {
-                                            String urlString = img2ImgResponse.getOutputList().get(0).getAsString();
-                                            Log.d(TAG, "onResponse original UrlString: " + urlString);
-                                            if (!urlString.startsWith("https://")) {
-                                                urlString = urlString.substring(urlString.indexOf("https://"));
-                                                int lastIndex = urlString.lastIndexOf(".png");
-                                                urlString = urlString.substring(0, lastIndex + 4);
-                                            }
-                                            output.mResultImageUrlSubject.onNext(urlString);
-                                            output.mClearDrawLineViewSubject.onNext(true);
+
+                                        String urlString = "";
+                                        if (img2ImgResponse.getOutputList() instanceof JsonPrimitive) {
+                                            JsonPrimitive outputJsonPrimitive =(JsonPrimitive) img2ImgResponse.getOutputList();
+                                            Log.d(TAG, "onResponse JsonPrimitive: " + outputJsonPrimitive.getAsString());
+                                            urlString = outputJsonPrimitive.getAsString();
                                         }
+
+                                        if (img2ImgResponse.getOutputList() instanceof JsonArray) {
+                                            JsonArray outputJsonArray = (JsonArray) img2ImgResponse.getOutputList();
+                                            Log.d(TAG, "onResponse JsonArray: " + outputJsonArray.getAsString());
+                                            if (outputJsonArray.size() > 0) {
+                                                urlString = outputJsonArray.get(0).getAsString();
+                                            }
+                                        }
+
+                                        if (TextUtils.isEmpty(urlString)) {
+                                            urlString = img2ImgResponse.getOutputList().toString();
+                                            Log.d(TAG, "onResponse Object: " + urlString);
+                                        }
+
+                                        Log.d(TAG, "onResponse original UrlString: " + urlString);
+                                        if (urlString.length() > 10 && !urlString.startsWith("https://")) {
+                                            urlString = urlString.substring(urlString.indexOf("https://"));
+                                            int lastIndex = urlString.lastIndexOf(".png");
+                                            urlString = urlString.substring(0, lastIndex + 4);
+                                        }
+                                        output.mResultImageUrlSubject.onNext(urlString);
+                                        output.mClearDrawLineViewSubject.onNext(true);
                                     }
 
                                     if (!response.isSuccessful()) {

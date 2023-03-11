@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".view.MainActivity">
 
     <ScrollView
@@ -31,7 +30,6 @@
                 android:layout_marginTop="30dp"
                 android:padding="4dp"
                 android:text="Question"
-                android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -43,7 +41,6 @@
                 android:layout_marginTop="5dp"
                 android:padding="4dp"
                 android:text="Response"
-                android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -146,8 +143,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPT-3-Davinci"
-            android:textColor="@color/black" />
+            android:text="GPT-3-Davinci" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/model_switch"
@@ -158,8 +154,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPT-3.5-turbo"
-            android:textColor="@color/black" />
+            android:text="GPT-3.5-turbo" />
     </LinearLayout>
 
     <!-- text field for asking question-->
@@ -170,9 +165,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="5dp"
         android:hint="Enter your query"
-        android:padding="5dp"
-        android:textColorHint="@color/black"
-        app:hintTextColor="@color/black">
+        android:padding="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/idEdtQuery"
@@ -184,8 +177,6 @@
             android:imeOptions="actionSend"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
             android:textSize="32sp"
             tools:text="How much is an Apple Pencil 2?" />
     </com.google.android.material.textfield.TextInputLayout>
