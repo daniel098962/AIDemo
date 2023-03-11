@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="inap_backgroung">#343E48</color>
+    <color name="inap_backgroung_ver2">#232D37</color>
+    <color name="button_enable">#63A0D7</color>
+    <color name="button_disable">#F2F4FA</color>
+    <color name="normal">#343E48</color>
+    <color name="button">#63A9EB</color>
+    <color name="yellow">#D9E021</color>
+    <color name="orange">#FFAC4A</color>
+    <color name="blue">#63A9EB</color>
+    <color name="dark_gray">#888888</color>
+    <color name="dark_blue">#2D3741</color>
+    <color name="light_gray_color">#B6B6B6</color>
+    <color name="white_smoke">#F2F2F2</color>
+    <color name="device_record_odi_value">#FBB03B</color>
+    <color name="device_record_pressure">#00FFFF</color>
+    <color name="device_record_spo2">#CCCCCC</color>
+    <color name="device_record_barchart_treatment_time">#D2FFFF</color>
+    <color name="device_record_barchart_sealing_time">#0E99FF</color>
+    <color name="device_record_barchart_label">#999999</color>
+    <color name="device_record_combinechart_od_status">#FBB03B</color>
+    <color name="record_uploading">#8CC63F</color>
+    <color name="record_waiting">#29ABE2</color>
+    <color name="record_complete">#000000</color>
+    <color name="record_analyzing">#FBB03B</color>
+    <color name="gender_selector_color">#FBB03B</color>
+    <color name="date_spinner">#00A99D</color>
+    <color name="delete_device">#F15A24</color>
+    <color name="correct">#00FF00</color>
+    <color name="fail">#F15A24</color>
+    <color name="result_xaxis">#1EC8E2</color>
+    <color name="upload_sn">#B3B3B3</color>
+    <color name="upload_date_time">#F2F2F2</color>
+    <color name="transparent">#00000000</color>
+    <color name="tongue_line_chart">#C80096</color>
+    <color name="heart_rate_bar">#CC99FF</color>
+
+    <color name="color_dcdcdc">#DCDCDC</color>
+    <color name="color_646464">#646464</color>
+    <color name="color_f2f5fa">#F2F5FA</color>
+    <color name="color_f0f3f9">#F0F3F9</color>
+    <color name="color_0053B5">#0053B5</color>
+    <color name="color_8EA7D6">#8EA7D6</color>
+    <color name="color_f7f7f7">#F7F7F7</color>
+    <color name="color_9698AA">#9698AA</color>
+    <color name="color_333D47">#333D47</color>
+    <color name="color_F2F4FA">#F2F4FA</color>
+    <color name="color_0550A2">#0550A2</color>
+    <color name="color_9496A7">#9496A7</color>
+
+    <color name="inap_backgroung_alpha">#CC343E48</color>
+
+    <!-- Sleep Log ChartColor -->
+    <color name="sleep_log_deep">#1B1464</color>
+    <color name="sleep_log_light">#0F60BD</color>
+    <color name="sleep_log_rem">#63A9EB</color>
+    <color name="sleep_log_wake">#C80096</color>
+
+    <!-- Tongue Device -->
+    <color name="tongue_mode_background">#232D37</color>
+    <color name="tongue_mode_unselect_text_color">#C8C8C8</color>
+
+    <!-- New Version Chart color -->
+    <color name="treat_time_over">#64DC96</color>
+    <color name="result_title_theme">#E6E6E6</color>
+    <color name="result_tag_theme">#787878</color>
+    <color name="pressure_theme">#FF9999</color>
+    <color name="odi_event_theme">#508200</color>
+    <color name="pumping_theme">#B4B496</color>
+    <color name="spo2_theme">#CC9933</color>
+    <color name="inap_heart_rate_theme">#0099CC</color>
+
+    <color name="sleep_log_start">#D100A6</color>
+    <color name="sleep_log_start_middle">#D2D2D2</color>
+    <color name="sleep_log_middle_middle">#B4B4B4</color>
+    <color name="sleep_log_middle_middle_end">#90ACD0</color>
+    <color name="sleep_log_middle_end">#65A2F2</color>
+    <color name="sleep_log_end">#559FFF</color>
+</resources>

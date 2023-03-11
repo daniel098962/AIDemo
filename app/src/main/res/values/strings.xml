@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AIDemo</string>
+
+    <string-array name="models_array">
+        <item>canny</item>
+        <item>depth</item>
+        <item>hed</item>
+        <item>hough</item>
+        <item>normal</item>
+        <item>openpose</item>
+        <item>scribble</item>
+        <item>segmentation</item>
+    </string-array>
+</resources>

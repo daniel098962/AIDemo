@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- bottom navigation -->
+    <style name="bottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="colorPrimary">#F7F7F7</item>
+        <item name="android:listPreferredItemHeightSmall">75dp</item>
+    </style>
+
+</resources>

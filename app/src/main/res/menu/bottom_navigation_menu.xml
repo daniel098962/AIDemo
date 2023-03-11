@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="ChatGPT"
+        android:id="@+id/main_home"
+        android:icon="@drawable/baseline_speaker_notes_24"
+        android:orderInCategory="1" />
+    <item
+        android:title="WordToImage"
+        android:id="@+id/main_results"
+        android:icon="@drawable/baseline_image_aspect_ratio_24"
+        android:orderInCategory="2"/>
+    <item
+        android:title="ImageToImage"
+        android:id="@+id/main_trends"
+        android:icon="@drawable/baseline_image_24"
+        android:orderInCategory="3"/>
+</menu>
+

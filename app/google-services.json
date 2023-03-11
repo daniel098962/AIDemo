@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50090759499",
+    "project_id": "ai-firebase-8a10f",
+    "storage_bucket": "ai-firebase-8a10f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50090759499:android:bfd5195691377dc11044ce",
+        "android_client_info": {
+          "package_name": "com.example.openaijavatest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50090759499-t17br6100ok2ieglshvkljp9qjet8vvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGm069S75eQBPribO5m8pad0qB1WYephc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50090759499-t17br6100ok2ieglshvkljp9qjet8vvc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
